@@ -26,7 +26,10 @@ namespace SBSBuilder
             var options = new Options();
             var result = options.Parse(args);
 
-            Log.Debug(args);
+            foreach(var i in args)
+            {
+                Log.Debug(i);
+            }
 
             Log.Debug(options);
 
