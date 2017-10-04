@@ -26,6 +26,8 @@ namespace SBSBuilder
             var options = new Options();
             var result = options.Parse(args);
 
+            Log.Debug(args);
+
             Log.Debug(options);
 
             if (result.HasErrors)
@@ -39,8 +41,7 @@ namespace SBSBuilder
                 Log.Error(options.ErrorText);
                 Environment.Exit(-1);
             }
-
-            Log.Debug(options);
+            
             var projectFile = new FileInfo(options.ProjectFile);
             var outputDir = new DirectoryInfo(options.TempDirectory + "\\" + Guid.NewGuid());
 
