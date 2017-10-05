@@ -29,7 +29,7 @@ namespace SBSBuilder.Tasks
         {
             var sbsInstallHome = ConfigurationManager.AppSettings["SBS_INSTALL_HOME"];
             if (sbsInstallHome == null)
-                throw new NullReferenceException("The location of the SBSInstall.exe directory must be set.");
+                throw new NullReferenceException("The location of the SBSInstall.exe directory must be set in the config.");
 
             if (BuildDirectory == null)
                 throw new NullReferenceException("Build directory must be set.");
