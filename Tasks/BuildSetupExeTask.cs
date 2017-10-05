@@ -5,6 +5,7 @@ using System.Text;
 using Chilkat;
 using log4net;
 using SBSBuilder.Config;
+using System.Configuration;
 
 namespace SBSBuilder.Tasks
 {
@@ -26,9 +27,9 @@ namespace SBSBuilder.Tasks
 
         public void Execute()
         {
-            var sbsInstallHome = Environment.GetEnvironmentVariable("SBS_INSTALL_HOME");
+            var sbsInstallHome = ConfigurationManager.AppSettings["SBS_INSTALL_HOME"];
             if (sbsInstallHome == null)
-                throw new NullReferenceException("The location of the SBSInstall.exe directory must be set. Set the %SBS_INSTALL_HOME% environment variable on your computer.");
+                throw new NullReferenceException("The location of the SBSInstall.exe directory must be set.");
 
             if (BuildDirectory == null)
                 throw new NullReferenceException("Build directory must be set.");

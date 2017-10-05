@@ -20,21 +20,10 @@ namespace SBSBuilder
 
         private static void Main(string[] args)
         {
-            Log.Debug("start of args");
-            Log.Debug(args.ToString());
-            foreach (var i in args)
-            {
-                Log.Debug(i.ToString());
-            }
-            Log.Debug("end of args");
-
-
             XmlConfigurator.Configure();
 
             var options = new Options();
-            var result = options.Parse(args);
-
-           
+            var result = options.Parse(args);           
 
             Log.Debug(options);
 
